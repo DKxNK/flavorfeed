@@ -1,0 +1,35 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Login from "../pages/Login/login";
+import Signup from "../pages/Signup/signup";
+import ReviewRouterHome from "./review-router-home";
+import ProfileRouterHome from "./profile-router-home";
+import AdminRoutes from "./admin";
+import SignInPage from "../pages/sign-page";
+import UserReviewRouterHome from "./user-review-router-home";
+import CommentSection from "../pages/comment/comments";
+import CommentEdit from "../pages/comment/comments_edit";
+
+const IndexRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/signin" element={<SignInPage />} />
+      <Route path="/userHome/*" element={<UserReviewRouterHome />} />
+
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+      <Route path="/reviewHome/*" element={<ReviewRouterHome />} />
+      <Route path="/reviewHome/*" element={<ReviewRouterHome />} />
+      <Route path="/profileHome/*" element={<ProfileRouterHome />} />
+      <Route path="/reviewerHome/*" element={<ReviewRouterHome />} />
+      <Route path="/comments/*" element={<CommentSection />} />
+     
+      <Route path="/admin/*" element={<AdminRoutes />} />
+      <Route path="/edit-comment/:commentId" element={<CommentEdit />}></Route>
+    </Routes>
+  );
+};
+
+export default IndexRoutes;
